@@ -1,0 +1,127 @@
+﻿<Window x:Class="CarSalesSystem.Customer.Windows.MaintenanceBill"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:CarSalesSystem.Customer.Windows"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+         xmlns:uc ="clr-namespace:CarSalesSystem.Admin.User_Controls" xmlns:domain="clr-namespace:CarSalesSystem"
+        WindowStyle="None"
+        FontSize="14"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        Title="MaintenanceBill">
+    <Border BorderBrush="#1A6985" Background="White" BorderThickness="0.5" CornerRadius="10" MouseDown="Border_MouseDown" 
+            Width="215" 
+            Height="395">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <uc:ControlBar Tag="{Binding Title, ElementName=wdtotalFee}"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <!---->
+                        <Label HorizontalAlignment="Center" Margin="0 10 0 0" 
+                               FontFamily="Inter" 
+                               FontWeight="Black" 
+                               Foreground="#1A6985"
+                               FontSize="30"
+                               >SGAUTO</Label>
+                        <!-- FULL NAME-->
+                        <TextBox x:Name="txtTenKH"
+                        VerticalAlignment="Top"
+                        Margin="30,10,30,0"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="FULL NAME"
+                        materialDesign:HintAssist.HintOpacity="1"
+                        >
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type materialDesign:SmartHint}">
+                                    <Setter Property="FontWeight"
+                                        Value="Bold" />
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                 
+                        <!--Product-->
+                        <TextBox x:Name="txtTenSP"
+                             VerticalAlignment="Center"
+                             Margin="30,10,30,0"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             materialDesign:HintAssist.Hint="PRODUCT"
+                             materialDesign:HintAssist.HintOpacity="1"
+                                 IsReadOnly="True">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type materialDesign:SmartHint}">
+                                    <Setter Property="FontWeight"
+                                        Value="Bold" />
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+
+                        <!-- ORDER DATE-->
+                        <Label FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           Margin="30,20,30,0"
+                           Foreground="Black">MAINTENANCE DATE
+                        </Label>
+                        <DatePicker
+                        x:Name="txtMaintainDate"
+                                VerticalAlignment="Center"
+                                Margin="30,0,30,0" 
+                                FontStyle="Italic"
+                                IsDropDownOpen="False"
+                                materialDesign:HintAssist.Hint="Future Date"
+                                materialDesign:CalendarAssist.IsHeaderVisible="False">
+                        </DatePicker>
+                        <!-- MAINTAIN FEE-->
+                        <TextBox x:Name="txtMaintainFee"
+                             VerticalAlignment="Center"
+                             Margin="30,10,30,30"
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                             materialDesign:HintAssist.Hint="PRICE"
+                             materialDesign:HintAssist.HintOpacity="1"
+                             IsEnabled="False">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type materialDesign:SmartHint}">
+                                    <Setter Property="FontWeight"
+                                        Value="Bold" />
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <Button x:Name="btnMaintain" 
+                            Grid.Row="1" 
+                            VerticalAlignment="Bottom" 
+                            HorizontalAlignment="Right"                             
+                            Margin="0 -5 10 8"
+                            Content="Order"
+                            Width="30" Height="30"
+                            BorderBrush="#478BA3"
+                            Foreground="White" Click="btnMaintain_Click"
+                            >
+                            <Button.Background >
+                                <ImageBrush x:Name="imgProDuct" ImageSource= "/Resources/Images/Icons/maintain.png"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                   
+                </Grid>
+
+            </Grid>
+           
+        </Grid>
+        
+
+    </Border>
+</Window>
