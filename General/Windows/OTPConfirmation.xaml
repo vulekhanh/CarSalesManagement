@@ -1,0 +1,151 @@
+﻿<Window x:Class="CarSalesSystem.General.Windows.OTPConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSalesSystem.General.Windows"
+        mc:Ignorable="d"
+        Title="OTPConfirmation" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Height="621" Width="465">
+    <Border CornerRadius="20" Background="#FFFFFF">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Name="Logo" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,25,0,98"
+                   Width="200"
+                   Height="80"
+                   Source="/Resources/Images/Icons/Signup_Logo.png" 
+                   Stretch="Fill"/>
+            <Label HorizontalAlignment="Center"
+                   Margin="0,120,0,0"
+                   Height="68" 
+                   FontSize="40" 
+                   FontWeight="Regular" 
+                   Foreground="#FF004D68" 
+                   FontFamily="Porsche">SG AUTO</Label>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                       Margin="40,0,40,70"
+                       FontFamily="Nexa ☞"
+                       FontSize="16"
+                       Name="TBCountDown"
+                       TextAlignment="Center"
+                       ></TextBlock>
+                <Grid Grid.Row="0"
+                      Margin="40,30,40,0" 
+                      Style="{DynamicResource LayoutRoot}"
+                      
+                      >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="CodeDigit1" 
+                             Grid.Column="0"
+                             Width="55"
+                             Height="55"
+                             FontFamily="Mochiy Pop One"
+                             FontSize="35"
+                             MaxLength="1"
+                             FontWeight="Normal"
+                             PreviewTextInput="PreviewTextInput"></TextBox>
+                    <TextBox Grid.Column="1"
+                             x:Name="CodeDigit2"
+                             Width="55"
+                             Height="55"
+                             PreviewTextInput="PreviewTextInput"
+                             FontFamily="Mochiy Pop One"
+                             FontWeight="Normal"
+                             FontSize="35"
+                             MaxLength="1"></TextBox>
+                    <TextBox Grid.Column="2" 
+                             x:Name="CodeDigit3"
+                            Width="55"
+                            Height="55"
+                             PreviewTextInput="PreviewTextInput"
+                             FontFamily="Mochiy Pop One"
+                             FontSize="35"
+                             FontWeight="Normal"
+                             MaxLength="1"></TextBox>
+                    <TextBox Grid.Column="3" x:Name="CodeDigit4"
+                             Width="55"
+                             Height="55"
+                             PreviewTextInput="PreviewTextInput"
+                             FontFamily="Mochiy Pop One"
+                             FontSize="35"
+                             FontWeight="Normal"
+                             MaxLength="1"></TextBox>
+                    <TextBox Grid.Column="4" x:Name="CodeDigit5"
+                             Width="55"
+                             Height="55"
+                             PreviewTextInput="PreviewTextInput"
+                             FontFamily="Mochiy Pop One"
+                             FontSize="35"
+                             FontWeight="Normal"
+                             MaxLength="1"></TextBox>
+                    <TextBox Grid.Column="5" x:Name="ConnectButton"
+                             Width="55"
+                             Height="55"
+                             FontFamily="Mochiy Pop One"
+                             IsHitTestVisible="False"
+                             PreviewTextInput="PreviewTextInput"
+                             FontSize="35"
+                             FontWeight="Normal"
+                             MaxLength="1"
+                             TextChanged="ConnectButton_TextChanged"></TextBox>
+                </Grid>
+                <TextBlock Grid.Row="1"
+                       Margin="40,0,40,50"
+                       TextWrapping="Wrap"
+                       Text="An OTP has been seen to your email. Please check your mail."
+                       FontFamily="Nexa ☞"
+                       FontWeight="Bold"
+                       FontSize="17"
+                       Foreground="#626262"
+                       VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1"
+                       Margin="40,50,40,0"
+                       TextWrapping="Wrap"
+                       Text="To ensure the safety of confirmation process, Do not share your OTP with others."
+                       FontFamily="Nexa ☞"
+                       FontWeight="Bold"
+                       FontSize="17"
+                       Foreground="#626262"
+                       VerticalAlignment="Center"></TextBlock>
+                <Label Grid.Row="2"
+                       Margin="235,0,10,50"
+                   VerticalAlignment="Center"
+                   Foreground="#626262"
+                   Content="Haven’t received any OTP?"
+                   FontFamily="Nexa ☞"
+                   FontSize="16"
+                   FontWeight="Medium"
+                   ></Label>
+                <Button Grid.Row="2"
+                    Margin="350,20,15,0"
+                    Background="#FB6161"
+                    Style="{DynamicResource RoundedButtonStyle}" Click="Button_Click" 
+                    >Resend</Button>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>
