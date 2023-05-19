@@ -1,0 +1,50 @@
+﻿<Window x:Class="CarSalesSystem.Admin.Windows.SettingSalary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSalesSystem.Admin.Windows"
+        mc:Ignorable="d"
+           AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        xmlns:uc="clr-namespace:CarSalesSystem.Admin.User_Controls"
+        Title="SettingSalary" Height="150" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <uc:ControlBar />
+        </Grid>
+        <Border Grid.Row="1" Background="White"  CornerRadius="0,0,10,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label Content="Type" Width="70" FontSize="14" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom"/>
+                    <ComboBox x:Name="cbType" Width="100" Margin="0,0,0,0" >
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label Content="Salary" Width="70" FontSize="14" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom"/>
+                    <TextBox x:Name="tbProducer" Grid.Row="1"
+                             PreviewTextInput="PreviewTextInput"
+                             Width="170" FontSize="14" Text=""/>
+                </StackPanel>
+
+                <Button x:Name="btnUpdate" 
+                        Grid.Row="2" 
+                        Width="90"
+                        Height="30"
+                        Content="Update"
+                        FontSize="14" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

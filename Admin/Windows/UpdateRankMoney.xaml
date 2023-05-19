@@ -1,0 +1,172 @@
+﻿<Window x:Class="CarSalesSystem.Admin.Windows.UpdateRankMoney"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarSalesSystem.Admin.Windows"
+        xmlns:uc ="clr-namespace:CarSalesSystem.Admin.User_Controls"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="UpdateRankMoney" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Height="280" Width="500">
+
+    
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            <Grid>
+                <uc:ControlBar/>
+            </Grid>
+        <Border CornerRadius="0 0 10 10" Background="#FFFFFF"
+                Grid.Row ="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid 
+                        Grid.Row="0"
+                        VerticalAlignment="Top"  
+                        Width="Auto" >
+                    <StackPanel Orientation="Horizontal">
+                        <Label
+                            Content="Rank type" 
+                            HorizontalAlignment="Left"
+                            FontSize="18" 
+                            Foreground="Gray"
+                            FontFamily="mitr"
+                            Height="32"
+                            Width="140"
+                            Margin="10,0,20,0"
+                            VerticalAlignment="Center"/>
+                        <ComboBox   
+                            x:Name="typeComboBox"
+                            Width="auto"
+                            Height="auto"
+                            FontSize="14" 
+                            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                            materialDesign:HintAssist.Hint="Type"
+                            IsReadOnly="True" 
+                            HorizontalContentAlignment="Left"
+                            VerticalContentAlignment="Center"
+                            BorderBrush="Gray"
+                            FontFamily="Mitr"
+                            LostFocus="typeComboBox_LostFocus">
+                            <ComboBoxItem>
+                                0
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                1
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                2
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                3
+                            </ComboBoxItem>
+                        </ComboBox>
+
+                    </StackPanel>
+                </Grid>
+                <Grid 
+                        Grid.Row="1"
+                        VerticalAlignment="Top"   >
+                    <StackPanel  Width="auto" Orientation="Horizontal" >
+                        <Label
+                        Content="Cash limit" 
+                        HorizontalAlignment="Left"
+                        FontSize="18" 
+                        Foreground="Gray"
+                        FontFamily="mitr"
+                        Margin="10,0,20,0"
+                        Width="140"
+                        VerticalAlignment="Center"/>
+                        <TextBox
+                                    x:Name="limitBox"
+                                    Width="300"
+                                    Height="auto"
+                                    FontSize="14" 
+                                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                                    materialDesign:HintAssist.Hint="Limit"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Bottom" 
+                                    BorderBrush="Gray"
+                                    FontFamily="mitr"
+                                    PreviewTextInput ="PreviewTextInput"
+                                     >
+                        </TextBox>
+
+                    </StackPanel>
+                </Grid>
+                <Grid 
+                        Grid.Row="2"
+                        VerticalAlignment="Top"   >
+                    <StackPanel  Width="auto" Orientation="Horizontal" >
+                        <Label
+                        Content="Discount" 
+                        HorizontalAlignment="Left"
+                        FontSize="18" 
+                        Foreground="Gray"
+                        FontFamily="mitr"
+                        Margin="10,0,20,0"
+                        Width="140"
+                        VerticalAlignment="Center"/>
+                        <TextBox
+                                    x:Name="discountBox"
+                                    Width="300"
+                                    Height="auto"
+                                    FontSize="14" 
+                                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                                    materialDesign:HintAssist.Hint="Discount"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Bottom" 
+                                    BorderBrush="Gray"
+                                    FontFamily="mitr"
+                                    PreviewTextInput ="PreviewTextInput"
+                                    MaxLength="3"
+                                     >
+                        </TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="3"
+                      Height="30" 
+                      HorizontalAlignment="Right"
+                      Margin="0 0 20 10">
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+                                x:Name="backButton"
+                         Content="Back"
+                        Height="30"
+                        FontSize="14"
+                        Width="100"
+                        ToolTip="Back Front Screen" 
+                        HorizontalAlignment="Right"
+                        Foreground="Black"
+                        Margin="0,0,30,0"
+                        BorderBrush="Black"
+                        Background="#FFFFFF" Click="backButton_Click"/>
+                        <Button x:Name="UpdateButton"
+                        Content="Update"
+                        Height="30"
+                        FontSize="14"
+                        Width="100"
+                        ToolTip="Add money rank" 
+                        HorizontalAlignment="Right"
+                        Foreground="White"
+                        BorderBrush="#134B5F"
+                        Background="#134B5F" Click="UpdateButton_Click"/>
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+        </Border>
+        </Grid>
+</Window>

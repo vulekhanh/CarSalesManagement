@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="CarSalesSystem.Admin.User_Controls.CarCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             Name="carCard">
+    <Border CornerRadius="10" Padding="3" Margin="0 7 0 7">
+        <Border.Style>
+            <Style TargetType="Border">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#f7f6f4"></Setter>
+                    </Trigger>
+
+                    <DataTrigger Binding="{Binding ElementName=CarCard, Path=IsActive}" Value="True">
+                        <Setter Property="Background" Value="#f7f6f4"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        <StackPanel Orientation="Horizontal">
+            <Border Width="60" Height="60" CornerRadius="8" Margin="0 0 10 0" Background="#ffffff">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="4" Opacity="0.25" Color="#000000"></DropShadowEffect>
+                </Border.Effect>
+                <Image Width="38" Height="38" Source="{Binding ElementName=carCard, Path=Image}"></Image>
+            </Border>
+
+            <StackPanel>
+                <TextBlock FontWeight="SemiBold" FontSize="14" Foreground="#000000" Text="{Binding ElementName=carCard, Path=CarCompany}"/>
+                <TextBlock FontWeight="Regular" FontSize="10" Foreground="#626262" Text="{Binding ElementName=carCard, Path=CarName}"/>
+                <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                    <!--Sales Info-->
+                    <Border Background="Transparent" CornerRadius="50" Width="20" Height="20">
+                        <Icon:PackIconMaterial Kind="CarDoor" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Width="20" Height="20" Foreground="#eb3223"/>
+                    </Border>
+
+                    <StackPanel Margin="8 0">
+                        <TextBlock Text="Sales" Foreground="#fc967d" FontSize="10"/>
+                        <TextBlock Text="{Binding ElementName=carCard, Path=SaleNumber}" Foreground="#0b0b0b" FontSize="11"/>
+                    </StackPanel>
+                    
+                    <!--Profit Info-->
+                    <Border Background="Transparent" CornerRadius="50" Width="20" Height="20">
+                        <Icon:PackIconMaterialDesign Kind="AttachMoney" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Width="20" Height="20" Foreground="#75D453"/>
+                    </Border>
+
+                    <StackPanel Margin="8 0">
+                        <TextBlock Text="Profit" Foreground="#75D453" FontSize="10"/>
+                        <TextBlock Text="{Binding ElementName=carCard, Path=Profit}" Foreground="#0b0b0b" FontSize="11"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

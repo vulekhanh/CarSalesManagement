@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="CarSalesSystem.Admin.User_Controls.EmployeeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarSalesSystem.Admin.User_Controls"
+             mc:Ignorable="d" 
+             xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             x:Name="ucEmployeeControl"
+             DataContext="{StaticResource EmployeeVm}"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid 
+                    x:Name="grMain"
+                    HorizontalAlignment="Center" 
+                    Background="#FFFFFF" Width="900">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="420"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock 
+                        x:Name="tbNo"
+                        Grid.Column="0"
+                        Padding="0,4,0,0"
+                        HorizontalAlignment="Center" 
+                        Margin="0" 
+                        FontFamily="Hierarchy"
+                        TextWrapping="Wrap" 
+                        Text="No" 
+                        Foreground="Black"
+                        VerticalAlignment="Center" 
+                        FontSize="14" 
+                        FontWeight="Light"/>
+
+        <TextBlock
+                        x:Name="tbName"
+                        FontFamily="Hierarchy"
+                        Grid.Column="1" 
+                         Padding="0,4,0,0"
+                        HorizontalAlignment="Center" 
+                        Margin="20,0,0,0" 
+                        TextWrapping="Wrap" 
+                        Text="Name" 
+                         Foreground="Black"
+                        VerticalAlignment="Center"
+                        FontSize="14" 
+                        FontWeight="Light"/>
+
+        <TextBlock 
+                        x:Name="tbSex"
+                         FontFamily="Hierarchy"
+                        Grid.Column="2" 
+                         Padding="0,4,0,0"
+                        HorizontalAlignment="Center"
+                        Margin="0" 
+                        TextWrapping="Wrap" 
+                        Text="Sex" 
+                         Foreground="Black"
+                        VerticalAlignment="Center" 
+                        FontSize="14"
+                        FontWeight="Light"/>
+        <TextBlock 
+                        x:Name="tbPosition"
+                         Padding="0,4,0,0"
+                        FontFamily="Hierarchy"
+                        Grid.Column="3" 
+                        HorizontalAlignment="Center"
+                        Margin="0" 
+                        TextWrapping="Wrap" 
+                        Text="Position" 
+                        Foreground="Black"
+                        VerticalAlignment="Center" 
+                        FontSize="14"
+                        FontWeight="Light"/>
+        <StackPanel Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button 
+                x:Name="btnpayment"
+                         Padding="0,4,0,0"
+                        FontFamily="Hierarchy"
+                Command="{Binding clickshowPaymentCommand }"
+                CommandParameter="{Binding ElementName=ucEmployeeControl}"
+                        Margin="0,0,20,0"
+                        HorizontalAlignment="Center"
+                        Background="Transparent"
+                        Foreground="#1A6985"
+                        VerticalAlignment="Center" 
+                        FontSize="18"
+                        BorderThickness="0"
+                        FontWeight="Bold">
+                <f:IconImage x:Name="iconbtnpayment" Icon="MoneyBill"
+                             Foreground="LightGray"
+                                         Width="24" Height="24" 
+                                         />
+
+            </Button>
+            <Button 
+                         Padding="0,4,0,0"
+                        FontFamily="Hierarchy"
+                        Margin="0,0,20,0"
+                        HorizontalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding EditEmployeeCommand}"
+                    CommandParameter ="{Binding ElementName=ucEmployeeControl}"
+                        Foreground="#1A6985"
+                        VerticalAlignment="Center" 
+                        FontSize="18"
+                        BorderThickness="0"
+                        FontWeight="Bold">
+                <materialDesign:PackIcon Kind="AccountEditOutline" 
+                                         Width="24" Height="24" 
+                                         />
+
+            </Button>
+            <Button 
+                         Padding="0,4,0,0"
+                        FontFamily="Hierarchy"
+                        Margin="0,0,20,0"
+                        HorizontalAlignment="Center"
+                        Background="Transparent"
+                        Command="{Binding DeleteEmployeeCommand}"
+                    CommandParameter ="{Binding ElementName=ucEmployeeControl}"
+                        Foreground="Red"
+                        VerticalAlignment="Center" 
+                        FontSize="18"
+                        BorderThickness="0"
+                        FontWeight="Bold">
+                <materialDesign:PackIcon Kind="Delete" 
+                                         Width="24" Height="24" 
+                                         />
+
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

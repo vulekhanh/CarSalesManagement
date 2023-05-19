@@ -1,0 +1,95 @@
+﻿<UserControl x:Class="CarSalesSystem.Admin.User_Controls.ImportReceiptControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CarSalesSystem.Admin.User_Controls"
+             x:Name="wdImportReceiptControl"
+             DataContext="{StaticResource ProductVM}"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+    <Grid 
+                    x:Name="grMain"
+                    HorizontalAlignment="Center" 
+                    Background="#FFFFFF" Width="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock 
+                        x:Name="tbNo"
+                        Grid.Column="0"
+                        Padding="0,4,0,0"
+                        HorizontalAlignment="Center" 
+                        Margin="0" 
+                        FontFamily="Hierarchy"
+                        TextWrapping="Wrap" 
+                        Text="No" 
+                        Foreground="Black"
+                        VerticalAlignment="Center" 
+                        FontSize="14" 
+                        FontWeight="Light"/>
+
+        <TextBlock
+                        x:Name="tbDate"
+                        FontFamily="Hierarchy"
+                        Grid.Column="1" 
+                         Padding="0,4,0,0"
+                        HorizontalAlignment="Center" 
+                        Margin="20,0,0,0" 
+                        TextWrapping="Wrap" 
+                        Text="Name" 
+                         Foreground="Black"
+                        VerticalAlignment="Center"
+                        FontSize="14" 
+                        FontWeight="Light"/>
+
+        <TextBlock 
+                        x:Name="tbEmpId"
+                         FontFamily="Hierarchy"
+                        Grid.Column="2" 
+                         Padding="0,4,0,0"
+                        HorizontalAlignment="Center"
+                        Margin="0" 
+                        TextWrapping="Wrap" 
+                        Text="Year" 
+                         Foreground="Black"
+                        VerticalAlignment="Center" 
+                        FontSize="14"
+                        FontWeight="Light"/>
+        <TextBlock 
+                        x:Name="TotalPrice"
+                         Padding="0,4,0,0"
+                        FontFamily="Hierarchy"
+                        Grid.Column="3" 
+                        HorizontalAlignment="Center"
+                        Margin="0" 
+                        TextWrapping="Wrap" 
+                        Text="Amount" 
+                        Foreground="Black"
+                        VerticalAlignment="Center" 
+                        FontSize="14"
+                        FontWeight="Light"/>
+        <Button 
+                         Padding="0,4,0,0"
+                        FontFamily="Hierarchy"
+                        Grid.Column="4" 
+                        Margin="0,0,20,0"
+                        HorizontalAlignment="Center"
+                        Background="Transparent"
+               Command="{Binding ShowImportReceiptInfoCommand}"
+                         CommandParameter="{Binding ElementName=wdImportReceiptControl}"
+                        Foreground="#1A6985"
+                        VerticalAlignment="Center" 
+                        FontSize="18"
+                        BorderThickness="0"
+                        FontWeight="Bold">
+            <materialDesign:PackIcon Foreground="Black" Kind="Details" Height="24" Width="24" />
+
+        </Button>
+
+    </Grid>
+</UserControl>
